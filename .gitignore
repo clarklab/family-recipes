@@ -10,3 +10,6 @@ staging/batch-*/
 .DS_Store
 __pycache__/
 *.pyc
+
+# Netlify CLI link
+.netlify/

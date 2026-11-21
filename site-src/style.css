@@ -134,7 +134,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
   margin: var(--lh) 0 0; line-height: var(--lh);
 }
 .card-body h2:first-child { margin-top: 0; }
-.card-body h3 { font-weight: 400; font-size: 18px; margin: var(--lh) 0 0; line-height: var(--lh); text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+.card-body h3 {
+  font-weight: 400; font-size: 18px; margin: var(--lh) 0 0; line-height: var(--lh); display: table;
+  background: linear-gradient(currentColor, currentColor) left calc(100% - 5px) / 100% 1px no-repeat;
+}
 .card-body ul, .card-body ol { margin: 0; padding: 0; }
 .card-body ul { list-style: none; }
 .card-body ol { padding-left: 2em; }

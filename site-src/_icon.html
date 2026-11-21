@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  html, body { margin: 0; width: 100vw; height: 100vh; overflow: hidden; }
+  body { display: grid; place-items: center; background: transparent; }
+  body.bg { background: #ece2cc; }
+  img { width: calc(100vw * var(--k, 1)); height: auto; }
+</style></head>
+<body>
+<img src="favicon.svg" alt="">
+<script>
+  const p = new URLSearchParams(location.search);
+  if (p.get("bg")) document.body.classList.add("bg");
+  document.querySelector("img").style.setProperty("--k", p.get("k") || "1");
+</script>
+</body></html>

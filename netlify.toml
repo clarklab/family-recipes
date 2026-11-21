@@ -1,0 +1,16 @@
+# The site is pre-built locally with `python3 build_site.py` (it needs ImageMagick),
+# so Netlify just publishes the site/ folder.
+[build]
+  publish = "site"
+  command = ""
+
+[[headers]]
+  for = "/cards/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

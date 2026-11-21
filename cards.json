@@ -1,0 +1,2552 @@
+[
+  {
+    "id": "0001",
+    "images": [
+      {
+        "file": "0001-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0001-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "frosted-salad"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0002",
+    "images": [
+      {
+        "file": "0002-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0002-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "apples-on-sticks"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0003",
+    "images": [
+      {
+        "file": "0003-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0003-a.jpg",
+        "label": "Back",
+        "rotate": 180
+      }
+    ],
+    "recipes": [
+      "finest-cherry-pie"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0004",
+    "images": [
+      {
+        "file": "0004-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0004-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "twin-cookie-sandwiches"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0005",
+    "images": [
+      {
+        "file": "0005-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "old-fashioned-bran-muffins"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0006",
+    "images": [
+      {
+        "file": "0006-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0006-a.jpg",
+        "label": "Back",
+        "note": "Blank"
+      }
+    ],
+    "recipes": [
+      "cherry-nut-cookies"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0007",
+    "images": [
+      {
+        "file": "0007-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0007-a.jpg",
+        "label": "Back",
+        "note": "Blank"
+      }
+    ],
+    "recipes": [
+      "corn-beef-and-cabbage"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0008",
+    "images": [
+      {
+        "file": "0008-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0008-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "spicy-apple-cobbler"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0009",
+    "images": [
+      {
+        "file": "0009-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "spaghetti-sauce-for-freezer"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0010",
+    "images": [
+      {
+        "file": "0010-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "spanish-rice"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0011",
+    "images": [
+      {
+        "file": "0011-b.jpg",
+        "label": "Front",
+        "note": "Handwritten: Fresh Fruit Pie and Canned Fruit Pie; bottom edge cut off in scan"
+      },
+      {
+        "file": "0011-a.jpg",
+        "label": "Back",
+        "note": "Typed: Lemon Parfait Pie and Fruit"
+      }
+    ],
+    "recipes": [
+      "fresh-fruit-pie",
+      "canned-fruit-pie",
+      "lemon-parfait-pie-and-fruit"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0012",
+    "images": [
+      {
+        "file": "0012-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0012-a.jpg",
+        "label": "Back",
+        "note": "Only blurry mirror-image ink soaked through from another card"
+      }
+    ],
+    "recipes": [
+      "zucchini-bread"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0013",
+    "images": [
+      {
+        "file": "0013-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0013-a.jpg",
+        "label": "Back",
+        "rotate": 180
+      }
+    ],
+    "recipes": [
+      "granola-bars",
+      "holiday-raisin-muffins"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0014",
+    "images": [
+      {
+        "file": "0014-a.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "pizza-sauce"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0015",
+    "images": [
+      {
+        "file": "0015-a.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0015-b.jpg",
+        "label": "Back",
+        "note": "Blank"
+      }
+    ],
+    "recipes": [
+      "tea-cake"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0016",
+    "images": [
+      {
+        "file": "0016-a.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0016-b.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "barbecued-round-steak"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0017",
+    "images": [
+      {
+        "file": "0017-a.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0017-b.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "golden-westerner"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0018",
+    "images": [
+      {
+        "file": "0018-a.jpg",
+        "label": "Front",
+        "rotate": 90
+      }
+    ],
+    "recipes": [
+      "peanut-brittle"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0019",
+    "images": [
+      {
+        "file": "0019-a.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "doughnuts"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0020",
+    "images": [
+      {
+        "file": "0020-a.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0020-b.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "coleslaw-relish"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0021",
+    "images": [
+      {
+        "file": "0021-a.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0021-b.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "butterscotch-cream-pie"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0022",
+    "images": [
+      {
+        "file": "0022-a.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "party-cheese-dip"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0023",
+    "images": [
+      {
+        "file": "0023-a.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0023-b.jpg",
+        "label": "Back",
+        "note": "Pencil game score tally, not a recipe"
+      }
+    ],
+    "recipes": [
+      "lollipops"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0024",
+    "images": [
+      {
+        "file": "0024-a.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "banana-bread"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0025",
+    "images": [
+      {
+        "file": "0025-a.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "meat-loaf"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0026",
+    "images": [
+      {
+        "file": "0026-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "frozen-salad"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0027",
+    "images": [
+      {
+        "file": "0027-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0027-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "creamy-honey-frosting",
+      "butterscotch-sauce",
+      "magic-topping"
+    ],
+    "status": "approved",
+    "note": "Card headed \"Sugar, Frosting, Sauce, and Topping\". It also opens with a decorating tip, not made into a recipe: \"Confectioners' Sugar: Place a doily on top of cake. Sift confectioners' sugar over it. Remove doily carefully. You will have an unusually attractive and appetizing pattern.\""
+  },
+  {
+    "id": "0028",
+    "images": [
+      {
+        "file": "0028-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "egg-sauce-for-lettuce-or-cabbage"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0029",
+    "images": [
+      {
+        "file": "0029-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "chicken-pie"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0030",
+    "images": [
+      {
+        "file": "0030-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0030-a.jpg",
+        "label": "Back",
+        "rotate": 180,
+        "note": "Orange Sauce, typed upside-down"
+      }
+    ],
+    "recipes": [
+      "fudge",
+      "orange-sauce"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0031",
+    "images": [
+      {
+        "file": "0031-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0031-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "german-chocolate-poundcake"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0032",
+    "images": [
+      {
+        "file": "0032-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "beef-pie"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0033",
+    "images": [
+      {
+        "file": "0033-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0033-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "lemon-meringue-pie"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0034",
+    "images": [
+      {
+        "file": "0034-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "popcorn-balls"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0035",
+    "images": [
+      {
+        "file": "0035-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "apple-crisp"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0036",
+    "images": [
+      {
+        "file": "0036-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "applesauce-cake"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0037",
+    "images": [
+      {
+        "file": "0037-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0037-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "stuffed-peppers"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0038",
+    "images": [
+      {
+        "file": "0038-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "spanish-rice-0038"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0039",
+    "images": [
+      {
+        "file": "0039-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0039-a.jpg",
+        "label": "Back",
+        "note": "Blank"
+      }
+    ],
+    "recipes": [
+      "jalapeno-cornbread"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0040",
+    "images": [
+      {
+        "file": "0040-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0040-a.jpg",
+        "label": "Back",
+        "note": "Blank (stains and show-through from the front)"
+      }
+    ],
+    "recipes": [
+      "white-fruit-cake"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0041",
+    "images": [
+      {
+        "file": "0041-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0041-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "buttery-crunch-cookies"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0042",
+    "images": [
+      {
+        "file": "0042-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0042-a.jpg",
+        "label": "Back",
+        "note": "Icing for the cake"
+      }
+    ],
+    "recipes": [
+      "red-velvet-cake"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0043",
+    "images": [
+      {
+        "file": "0043-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "chiffon-cake"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0044",
+    "images": [
+      {
+        "file": "0044-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0044-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "lemon-roll"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0045",
+    "images": [
+      {
+        "file": "0045-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "frosted-orange-crush"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0046",
+    "images": [
+      {
+        "file": "0046-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0046-a.jpg",
+        "label": "Back",
+        "note": "Blank except for faint pink ink smudges"
+      }
+    ],
+    "recipes": [
+      "glamorous-toppings"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0047",
+    "images": [
+      {
+        "file": "0047-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "lemon-supreme-cake-mix"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0048",
+    "images": [
+      {
+        "file": "0048-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "lime-fluff"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0049",
+    "images": [
+      {
+        "file": "0049-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0049-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "sour-cream-chocolate-torte"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0050",
+    "images": [
+      {
+        "file": "0050-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0050-a.jpg",
+        "label": "Back",
+        "note": "Chiffon Cake, handwritten (a separate recipe)"
+      }
+    ],
+    "recipes": [
+      "cinnamon-apple-salad",
+      "chiffon-cake-0050"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0051",
+    "images": [
+      {
+        "file": "0051-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "almendrado-salad"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0052",
+    "images": [
+      {
+        "file": "0052-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0052-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "carnation-five-minute-fudge"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0053",
+    "images": [
+      {
+        "file": "0053-a.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "watermelon-rind-preserves"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0054",
+    "images": [
+      {
+        "file": "0054-a.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "bread-and-butter-pickles"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0055",
+    "images": [
+      {
+        "file": "0055-a.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0055-b.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "no-cook-magic-lemon-meringue-pie"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0056",
+    "images": [
+      {
+        "file": "0056-a.jpg",
+        "label": "Front",
+        "rotate": 180
+      },
+      {
+        "file": "0056-b.jpg",
+        "label": "Back",
+        "rotate": 270,
+        "note": "Handwritten personal to-do / packing list, not a recipe",
+        "blurred": "personal to-do list"
+      }
+    ],
+    "recipes": [
+      "tea-cakes"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0057",
+    "images": [
+      {
+        "file": "0057-a.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0057-b.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "german-chocolate-pie"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0058",
+    "images": [
+      {
+        "file": "0058-a.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "barbecue-chicken"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0059",
+    "images": [
+      {
+        "file": "0059-a.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0059-b.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "pineapple-upside-down-cake"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0060",
+    "images": [
+      {
+        "file": "0060-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0060-a.jpg",
+        "label": "Back",
+        "note": "Coconut Pecan Frosting for the cake"
+      }
+    ],
+    "recipes": [
+      "german-chocolate-cake"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0061",
+    "images": [
+      {
+        "file": "0061-a.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "texas-barbecue-sauce"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0062",
+    "images": [
+      {
+        "file": "0062-a.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0062-b.jpg",
+        "label": "Back",
+        "note": "Blank"
+      }
+    ],
+    "recipes": [
+      "apple-pie"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0063",
+    "images": [
+      {
+        "file": "0063-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0063-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "double-chocolate-cake"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0064",
+    "images": [
+      {
+        "file": "0064-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0064-a.jpg",
+        "label": "Back",
+        "rotate": 180
+      }
+    ],
+    "recipes": [
+      "peanut-butter-bars"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0065",
+    "images": [
+      {
+        "file": "0065-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "chess-pie-meringue"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0066",
+    "images": [
+      {
+        "file": "0066-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "cheese-roll-on-crackers"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0067",
+    "images": [
+      {
+        "file": "0067-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "molasses-crinkles"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0068",
+    "images": [
+      {
+        "file": "0068-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "pineapple-upside-down-gingerbread"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0069",
+    "images": [
+      {
+        "file": "0069-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "butterscotch-slices"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0070",
+    "images": [
+      {
+        "file": "0070-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "corn-meal-recipe"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0071",
+    "images": [
+      {
+        "file": "0071-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0071-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "penuche"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0072",
+    "images": [
+      {
+        "file": "0072-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "banana-nut-cake"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0073",
+    "images": [
+      {
+        "file": "0073-a.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0073-b.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "sourdough-biscuits",
+      "sourdough-pancakes"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0074",
+    "images": [
+      {
+        "file": "0074-b.jpg",
+        "label": "Clipping"
+      },
+      {
+        "file": "0074-a.jpg",
+        "label": "Back",
+        "note": "Newspaper community events calendar, not a recipe"
+      }
+    ],
+    "recipes": [
+      "tortillas-de-maiz"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0075",
+    "images": [
+      {
+        "file": "0075-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0075-a.jpg",
+        "label": "Back",
+        "rotate": 180
+      }
+    ],
+    "recipes": [
+      "chocolate-cake"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0076",
+    "images": [
+      {
+        "file": "0076-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "ice-cream"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0077",
+    "images": [
+      {
+        "file": "0077-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0077-a.jpg",
+        "label": "Back",
+        "note": "Blank"
+      }
+    ],
+    "recipes": [
+      "frozen-cranberry-salad-0077"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0078",
+    "images": [
+      {
+        "file": "0078-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "perfect-sugar-cookies"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0079",
+    "images": [
+      {
+        "file": "0079-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "caramel-topping"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0080",
+    "images": [
+      {
+        "file": "0080-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0080-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "salsa",
+      "nachos"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0081",
+    "images": [
+      {
+        "file": "0081-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "chicken-and-dumplings"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0082",
+    "images": [
+      {
+        "file": "0082-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "single-pie-crust"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0083",
+    "images": [
+      {
+        "file": "0083-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0083-a.jpg",
+        "label": "Back",
+        "note": "Pen doodle only, not part of the recipe"
+      }
+    ],
+    "recipes": [
+      "cake-mix-cookies"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0084",
+    "images": [
+      {
+        "file": "0084-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0084-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "prickly-pear-jelly-0084"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0085",
+    "images": [
+      {
+        "file": "0085-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0085-a.jpg",
+        "label": "Back",
+        "note": "Blank"
+      }
+    ],
+    "recipes": [
+      "chocolate-pie"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0086",
+    "images": [
+      {
+        "file": "0086-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "browned-beef-stew"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0087",
+    "images": [
+      {
+        "file": "0087-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0087-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "chocolate-cookies"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0088",
+    "images": [
+      {
+        "file": "0088-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "pizza-dough"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0089",
+    "images": [
+      {
+        "file": "0089-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0089-a.jpg",
+        "label": "Back",
+        "note": "Blank"
+      }
+    ],
+    "recipes": [
+      "yum-yum-salad"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0090",
+    "images": [
+      {
+        "file": "0090-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "salmon-patties"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0091",
+    "images": [
+      {
+        "file": "0091-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "vickis-pancakes"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0092",
+    "images": [
+      {
+        "file": "0092-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0092-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "vicki-maize-cornbread",
+      "mitchel-corn-bread"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0093",
+    "images": [
+      {
+        "file": "0093-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0093-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "tortillas"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0094",
+    "images": [
+      {
+        "file": "0094-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "chili"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0095",
+    "images": [
+      {
+        "file": "0095-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "roast-with-pinto-beans-and-green-chilies"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0096",
+    "images": [
+      {
+        "file": "0096-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "barbecue-sauce"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0097",
+    "images": [
+      {
+        "file": "0097-b.jpg",
+        "label": "Front",
+        "rotate": 270
+      },
+      {
+        "file": "0097-a.jpg",
+        "label": "Back",
+        "rotate": 90
+      }
+    ],
+    "recipes": [
+      "corn-pone-for-dressing"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0098",
+    "images": [
+      {
+        "file": "0098-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "chicken-quesadilla"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0099",
+    "images": [
+      {
+        "file": "0099-b.jpg",
+        "label": "Front",
+        "rotate": 90
+      },
+      {
+        "file": "0099-a.jpg",
+        "label": "Back",
+        "note": "Blank (stain and ink showing through)"
+      }
+    ],
+    "recipes": [
+      "corn-pone-for-dressing-0099"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0100",
+    "images": [
+      {
+        "file": "0100-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "quiche"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0101",
+    "images": [
+      {
+        "file": "0101-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0101-a.jpg",
+        "label": "Back",
+        "note": "Only \"SALADS\" written sideways in pencil"
+      }
+    ],
+    "recipes": [
+      "fudge-0101"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0102",
+    "images": [
+      {
+        "file": "0102-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "pinto-beans"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0103",
+    "images": [
+      {
+        "file": "0103-b.jpg",
+        "label": "Front",
+        "blurred": "phone number"
+      }
+    ],
+    "recipes": [
+      "vikes-witches-brew"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0104",
+    "images": [
+      {
+        "file": "0104-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "popcorn-balls-0104"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0105",
+    "images": [
+      {
+        "file": "0105-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0105-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "cinnamon-rolls"
+    ],
+    "status": "approved"
+  },
+  {
+    "id": "0106",
+    "images": [
+      {
+        "file": "0106-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0106-a.jpg",
+        "label": "Back",
+        "rotate": 90,
+        "note": "Best Western logo with handwritten phone numbers and arithmetic, not a recipe",
+        "blurred": "handwritten phone numbers"
+      }
+    ],
+    "recipes": [
+      "frozen-cranberry-salad"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0107",
+    "images": [
+      {
+        "file": "0107-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "prickly-pear-jelly"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0108",
+    "images": [
+      {
+        "file": "0108-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "chili-0108"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0109",
+    "images": [
+      {
+        "file": "0109-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0109-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "impossible-pumpkin-pie"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0110",
+    "images": [
+      {
+        "file": "0110-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0110-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "lima-bean-casserole"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0111",
+    "images": [
+      {
+        "file": "0111-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "tortilla-rolls"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0112",
+    "images": [
+      {
+        "file": "0112-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0112-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "sourdough-bread"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0113",
+    "images": [
+      {
+        "file": "0113-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0113-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "hawaiian-kabobs"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0114",
+    "images": [
+      {
+        "file": "0114-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0114-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "moms-applesauce-cake"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0115",
+    "images": [
+      {
+        "file": "0115-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0115-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "fruit-pemmican"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0116",
+    "images": [
+      {
+        "file": "0116-b.jpg",
+        "label": "Flyer"
+      },
+      {
+        "file": "0116-a.jpg",
+        "label": "Flyer back",
+        "note": "Advertisement for the Hershey's Chocolate Cookbook / Ideals magazine"
+      }
+    ],
+    "recipes": [
+      "no-bake-chocolate-cherry-mini-tarts"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0117",
+    "images": [
+      {
+        "file": "0117-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0117-a.jpg",
+        "label": "Back",
+        "note": "Blank (ink shows through)"
+      }
+    ],
+    "recipes": [
+      "taco-soup"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0118",
+    "images": [
+      {
+        "file": "0118-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "green-chili-stew"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0119",
+    "images": [
+      {
+        "file": "0119-b.jpg",
+        "label": "Letter, page 1",
+        "note": "Family letter; not part of the recipe",
+        "blurred": "personal family letter"
+      },
+      {
+        "file": "0119-a.jpg",
+        "label": "Letter, page 2",
+        "note": "Family news at the top; the cobbler recipe starts partway down",
+        "blurred": "family news"
+      }
+    ],
+    "recipes": [
+      "quick-cobbler"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0120",
+    "images": [
+      {
+        "file": "0120-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0120-a.jpg",
+        "label": "Back",
+        "note": "Blank"
+      }
+    ],
+    "recipes": [
+      "hot-rolls"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0121",
+    "images": [
+      {
+        "file": "0121-a.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0121-b.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "homemade-bread",
+      "pecan-pie-0121"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0122",
+    "images": [
+      {
+        "file": "0122-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0122-a.jpg",
+        "label": "Back",
+        "note": "Broasty Jr. restaurant menu flyer (Clovis), not a recipe"
+      }
+    ],
+    "recipes": [
+      "pecan-pie-0122"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0123",
+    "images": [
+      {
+        "file": "0123-b.jpg",
+        "label": "Scrap"
+      }
+    ],
+    "recipes": [],
+    "status": "needs-review",
+    "note": "Handwritten list of the ingredients in a stomach or antacid medicine (belladonna, sodium bicarbonate, calcium and magnesium carbonate, bismuth subsalicylate, aluminum hydroxide, essence of mint) on a scrap of green paper. Not a food recipe, and belladonna is poisonous; suggest leaving it off the site."
+  },
+  {
+    "id": "0124",
+    "images": [
+      {
+        "file": "0124-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0124-a.jpg",
+        "label": "Back",
+        "note": "Blank"
+      }
+    ],
+    "recipes": [
+      "good-n-easy-pizza"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0125",
+    "images": [
+      {
+        "file": "0125-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0125-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "german-sweet-chocolate-pie",
+      "german-sweet-chocolate-cream-cheese-brownies"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0126",
+    "images": [
+      {
+        "file": "0126-b.jpg",
+        "label": "Clipping"
+      },
+      {
+        "file": "0126-a.jpg",
+        "label": "Back",
+        "note": "Sheet of return-address labels, not a recipe",
+        "blurred": "names and home addresses"
+      }
+    ],
+    "recipes": [
+      "paper-bag-apple-pie"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0127",
+    "images": [
+      {
+        "file": "0127-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0127-a.jpg",
+        "label": "Back",
+        "note": "Crossed-out list, not a recipe"
+      }
+    ],
+    "recipes": [
+      "boston-baked-beans"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0128",
+    "images": [
+      {
+        "file": "0128-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0128-a.jpg",
+        "label": "Back",
+        "note": "Blank"
+      }
+    ],
+    "recipes": [
+      "chicken-soup"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0129",
+    "images": [
+      {
+        "file": "0129-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0129-a.jpg",
+        "label": "Back",
+        "note": "Frosting continues here"
+      }
+    ],
+    "recipes": [
+      "chocolate-thru-and-thru-cake"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0130",
+    "images": [
+      {
+        "file": "0130-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "ezekiel-bread"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0131",
+    "images": [
+      {
+        "file": "0131-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "skor"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0132",
+    "images": [
+      {
+        "file": "0132-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0132-a.jpg",
+        "label": "Back",
+        "note": "Salad dressing directions"
+      }
+    ],
+    "recipes": [
+      "hidden-valley-ranch-dip-and-dressing"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0133",
+    "images": [
+      {
+        "file": "0133-b.jpg",
+        "label": "Clipping"
+      },
+      {
+        "file": "0133-a.jpg",
+        "label": "Back",
+        "note": "Newspaper football report, not a recipe"
+      }
+    ],
+    "recipes": [
+      "abbys-famous-pecan-pie"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0134",
+    "images": [
+      {
+        "file": "0134-a.jpg",
+        "label": "Ingredients"
+      },
+      {
+        "file": "0134-b.jpg",
+        "label": "Directions"
+      }
+    ],
+    "recipes": [
+      "ground-beef-cornbread-casserole"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0135",
+    "images": [
+      {
+        "file": "0135-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0135-a.jpg",
+        "label": "Back",
+        "note": "Blank (writing shows through)"
+      }
+    ],
+    "recipes": [
+      "pear-preserves"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0136",
+    "images": [
+      {
+        "file": "0136-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0136-a.jpg",
+        "label": "Back",
+        "note": "Blank (writing shows through)"
+      }
+    ],
+    "recipes": [
+      "grape-juice"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0137",
+    "images": [
+      {
+        "file": "0137-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0137-a.jpg",
+        "label": "Back"
+      }
+    ],
+    "recipes": [
+      "chili-0137"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0138",
+    "images": [
+      {
+        "file": "0138-b.jpg",
+        "label": "Front"
+      }
+    ],
+    "recipes": [
+      "yum-yum"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0139",
+    "images": [
+      {
+        "file": "0139-b.jpg",
+        "label": "Front",
+        "rotate": 270,
+        "note": "Recipe is the left half; right half is unrelated notes (song titles, phone number)",
+        "blurred": "phone number and personal notes"
+      },
+      {
+        "file": "0139-a.jpg",
+        "label": "Back",
+        "note": "Printer test page, not a recipe"
+      }
+    ],
+    "recipes": [
+      "custard-and-meringue"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0140",
+    "images": [
+      {
+        "file": "0140-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0140-a.jpg",
+        "label": "Back",
+        "note": "Printed letterhead, no recipe"
+      }
+    ],
+    "recipes": [
+      "sopaipillas-0140"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0141",
+    "images": [
+      {
+        "file": "0141-a.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0141-b.jpg",
+        "label": "Back",
+        "note": "Printed letterhead, no recipe"
+      }
+    ],
+    "recipes": [
+      "flour-tortillas",
+      "sopaipillas-0141"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0142",
+    "images": [
+      {
+        "file": "0142-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0142-a.jpg",
+        "label": "Back",
+        "note": "Part of a printed form, not a recipe"
+      }
+    ],
+    "recipes": [
+      "onion-rings-0142"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0143",
+    "images": [
+      {
+        "file": "0143-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0143-a.jpg",
+        "label": "Back",
+        "note": "Part of a printed form, not a recipe"
+      }
+    ],
+    "recipes": [
+      "onion-rings-0143"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0144",
+    "images": [
+      {
+        "file": "0144-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0144-a.jpg",
+        "label": "Back",
+        "note": "Advertisement on back (Guideposts book series)"
+      }
+    ],
+    "recipes": [
+      "grace-chapel-muffins"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0145",
+    "images": [
+      {
+        "file": "0145-b.jpg",
+        "label": "Front",
+        "rotate": 180,
+        "note": "Recipe handwritten upside down on the back of an insurance payment receipt",
+        "blurred": "receipt details showing through"
+      },
+      {
+        "file": "0145-a.jpg",
+        "label": "Back",
+        "rotate": 180,
+        "note": "Insurance payment receipt, not a recipe",
+        "blurred": "insurance receipt details"
+      }
+    ],
+    "recipes": [
+      "cashew-caramel-fudge"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0146",
+    "images": [
+      {
+        "file": "0146-b.jpg",
+        "label": "Front"
+      },
+      {
+        "file": "0146-a.jpg",
+        "label": "Back",
+        "note": "Blank (print shows through)"
+      }
+    ],
+    "recipes": [
+      "chocolate-topped-brown-sugar-bars"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0147",
+    "images": [
+      {
+        "file": "0147-b.jpg",
+        "label": "Front",
+        "note": "Photo side of a Kraft Velveeta leaflet: titles, photos, prep times; a folded corner shows part of the Tex-Mex Fondue directions"
+      },
+      {
+        "file": "0147-a.jpg",
+        "label": "Back",
+        "note": "Recipe side: five recipes"
+      }
+    ],
+    "recipes": [
+      "cheesy-chicken-enchiladas",
+      "shells-and-cheese-florentine",
+      "mexican-chili-burgers",
+      "chicken-fajita-pizzas",
+      "tex-mex-fondue"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0148",
+    "images": [
+      {
+        "file": "0148-b.jpg",
+        "label": "Front",
+        "rotate": 90,
+        "note": "Hershey's Cocoa peel-off label: cover plus three recipes"
+      },
+      {
+        "file": "0148-a.jpg",
+        "label": "Back",
+        "rotate": 270,
+        "note": "Intro text plus three recipes"
+      }
+    ],
+    "recipes": [
+      "fruit-filled-chocolate-dreams",
+      "chocolate-cupcakes",
+      "chocolate-ricotta-cheesecake",
+      "hersheys-light-chocolate-cake",
+      "creamy-chocolate-and-peach-layered-pudding",
+      "silky-cocoa-creme"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "0149",
+    "images": [
+      {
+        "file": "0149-b.jpg",
+        "label": "Clipping",
+        "rotate": 180
+      },
+      {
+        "file": "0149-a.jpg",
+        "label": "Back",
+        "rotate": 180,
+        "note": "Newspaper advertisements, not a recipe"
+      }
+    ],
+    "recipes": [
+      "potato-latkes"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "loose-01",
+    "images": [
+      {
+        "file": "loose-01.jpg",
+        "label": "Scan"
+      }
+    ],
+    "recipes": [
+      "tuna-salad"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "loose-02",
+    "images": [
+      {
+        "file": "loose-02.jpg",
+        "label": "Scan"
+      }
+    ],
+    "recipes": [
+      "zucchini-bread-loose-02"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "loose-03",
+    "images": [
+      {
+        "file": "loose-03.jpg",
+        "label": "Scan",
+        "note": "Handwritten note (written sideways) laid on top of the Campbell's Beef Taco Skillet ad from loose-04"
+      }
+    ],
+    "recipes": [
+      "apple-cider-vinegar-juice-drink"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "loose-04",
+    "images": [
+      {
+        "file": "loose-04.jpg",
+        "label": "Scan",
+        "note": "Same Campbell's ad page as loose-03, with the note moved aside"
+      }
+    ],
+    "recipes": [
+      "beef-taco-skillet"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "loose-05",
+    "images": [
+      {
+        "file": "loose-05.jpg",
+        "label": "Scan"
+      }
+    ],
+    "recipes": [],
+    "note": "Omaha Steaks \"Steak Cooking Tips\" insert (general steak grilling/broiling tips, not a recipe). Same Omaha Steaks shipment as loose-06 and loose-07. Suggest leaving off the site.",
+    "status": "needs-review"
+  },
+  {
+    "id": "loose-06",
+    "images": [
+      {
+        "file": "loose-06.jpg",
+        "label": "Scan"
+      }
+    ],
+    "recipes": [],
+    "note": "Omaha Steaks \"Our Foolproof Steak Cooking Chart\" (times by thickness and doneness) plus \"About Your Omaha Steaks\" thawing/storing tips. Not a recipe; suggest leaving off the site.",
+    "status": "needs-review"
+  },
+  {
+    "id": "loose-07",
+    "images": [
+      {
+        "file": "loose-07.jpg",
+        "label": "Scan"
+      }
+    ],
+    "recipes": [],
+    "note": "Omaha Steaks promotional insert (\"Perfect For Any Occasion\" gift advertising, customer service number, (c) 2000). Not a recipe; suggest leaving off the site.",
+    "status": "needs-review"
+  },
+  {
+    "id": "loose-08",
+    "images": [
+      {
+        "file": "loose-08.jpg",
+        "label": "Scan"
+      }
+    ],
+    "recipes": [],
+    "note": "Not a recipe: an Omaha Steaks quality-guarantee certificate. I suggest leaving it off the site.",
+    "status": "needs-review"
+  },
+  {
+    "id": "loose-09",
+    "images": [
+      {
+        "file": "loose-09.jpg",
+        "label": "Scan"
+      }
+    ],
+    "recipes": [
+      "rr-chili"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "loose-10",
+    "images": [
+      {
+        "file": "loose-10.jpg",
+        "label": "Scan"
+      }
+    ],
+    "recipes": [
+      "wild-west-chili"
+    ],
+    "status": "needs-review"
+  },
+  {
+    "id": "loose-11",
+    "images": [
+      {
+        "file": "loose-12.jpg",
+        "label": "Original (cursive)"
+      },
+      {
+        "file": "loose-11.jpg",
+        "label": "Printed copy"
+      }
+    ],
+    "recipes": [
+      "coconut-crust"
+    ],
+    "status": "needs-review"
+  }
+]

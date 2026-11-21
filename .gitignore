@@ -1,0 +1,12 @@
+# Original full-resolution scans (about 1.1 GB). They stay on the scanning computer
+# because they include unblurred personal details (phone numbers, addresses, receipts).
+# web-images/ holds the web-sized copies with those details blurred.
+Grammie's Recipes_*.jpg
+Scanned_*.jpg
+
+# Transcription working copies; the finished recipes live in recipes/
+staging/batch-*/
+
+.DS_Store
+__pycache__/
+*.pyc

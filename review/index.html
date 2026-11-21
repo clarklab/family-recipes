@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recipe Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f6efdf;
+    --paper-edge: #ebe0c8;
+    --ink: #2a2420;
+    --ink-soft: #6b6056;
+    --ribbon: #a23b2a;
+    --ok: #3f6b3c;
+    --flag: #b7791f;
+    --table: #2f2a25;
+    --table-2: #3a342e;
+    --line: rgba(42, 36, 32, .14);
+    --hilite: rgba(255, 214, 92, .55);
+    --type: "Special Elite", "Courier Prime", "Courier New", monospace;
+    --mono: "Courier Prime", "Courier New", monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: var(--table);
+    color: var(--ink);
+    font-family: var(--mono);
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    overflow: hidden;
+  }
+  button { font: inherit; cursor: pointer; }
+  kbd {
+    font-family: var(--mono); font-size: 11px;
+    border: 1px solid var(--line); border-bottom-width: 2px;
+    border-radius: 3px; padding: 0 4px; background: #fffaf0; color: var(--ink);
+  }
+
+  /* ---------- top bar ---------- */
+  header {
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    padding: 10px 16px; background: var(--paper); border-bottom: 1px solid var(--paper-edge);
+  }
+  header h1 { font-family: var(--type); font-weight: 400; font-size: 20px; margin: 0; letter-spacing: .02em; }
+  .progress { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--ink-soft); }
+  .bar { width: 160px; height: 8px; background: var(--paper-edge); border-radius: 4px; overflow: hidden; display: flex; }
+  .bar i { display: block; height: 100%; }
+  .bar .ok { background: var(--ok); }
+  .bar .fl { background: var(--flag); }
+  header .spacer { flex: 1; }
+  header label { font-size: 13px; color: var(--ink-soft); display: flex; gap: 6px; align-items: center; }
+  select { font: inherit; font-size: 13px; padding: 3px 6px; background: #fffaf0; border: 1px solid var(--line); border-radius: 4px; color: var(--ink); }
+
+  /* ---------- card strip ---------- */
+  .strip {
+    display: flex; gap: 6px; padding: 8px 16px; overflow-x: auto;
+    background: var(--table-2); border-bottom: 1px solid #00000040;
+    scrollbar-width: thin;
+  }
+  .chip {
+    flex: none; display: flex; align-items: center; gap: 6px;
+    padding: 4px 10px; border-radius: 14px; border: 1px solid #ffffff22;
+    background: #ffffff0d; color: #e9e1d2; font-size: 12px;
+  }
+  .chip:hover { background: #ffffff1a; }
+  .chip.current { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #a89d8f; }
+  .dot.approved { background: #6fbf6a; }
+  .dot.flagged { background: #e0a23a; }
+  .chip.current .dot.needs-review { background: var(--ink-soft); }
+
+  /* ---------- main split ---------- */
+  main { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(380px, 1fr); min-height: 0; }
+
+  .left { display: grid; grid-template-rows: auto 1fr auto; min-height: 0; background: var(--table); }
+  .sides { display: flex; gap: 6px; padding: 10px 14px 0; align-items: center; flex-wrap: wrap; }
+  .side {
+    padding: 5px 12px; border-radius: 6px 6px 0 0; border: 1px solid #ffffff22; border-bottom: none;
+    background: #ffffff0d; color: #d9d0c1; font-size: 13px;
+  }
+  .side.on { background: var(--table-2); color: #fff; }
+  .side small { color: #b5a995; margin-left: 4px; }
+  .side small.blurred { color: #e0a23a; }
+  .tw .from { font-size: 14px; color: var(--ink-soft); margin: -2px 0 8px; font-style: italic; }
+  .viewer {
+    position: relative; overflow: hidden; margin: 0 14px; border-radius: 0 8px 8px 8px;
+    background: var(--table-2) radial-gradient(circle at 50% 40%, #463f37 0%, var(--table-2) 70%);
+    cursor: grab; touch-action: none;
+  }
+  .viewer.dragging { cursor: grabbing; }
+  .viewer img {
+    position: absolute; left: 50%; top: 50%; max-width: none; user-select: none; -webkit-user-drag: none;
+    box-shadow: 0 6px 24px #0008; transform-origin: center center;
+  }
+  .viewtools { display: flex; gap: 8px; padding: 8px 14px 12px; align-items: center; color: #b5a995; font-size: 12px; }
+  .viewtools button {
+    background: #ffffff10; color: #e9e1d2; border: 1px solid #ffffff22; border-radius: 6px; padding: 4px 10px; font-size: 12px;
+  }
+  .viewtools button:hover { background: #ffffff20; }
+  .viewtools .hint { margin-left: auto; }
+
+  /* ---------- right: the typed page ---------- */
+  .right {
+    display: grid; grid-template-rows: 1fr auto; min-height: 0;
+    background:
+      radial-gradient(ellipse at 20% 10%, #fffaf0 0%, transparent 60%),
+      radial-gradient(ellipse at 90% 80%, #efe4cc 0%, transparent 55%),
+      var(--paper);
+    border-left: 1px solid var(--paper-edge);
+  }
+  .page { overflow-y: auto; padding: 22px 30px 30px; }
+  .meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; font-size: 12px; color: var(--ink-soft); margin-bottom: 14px; }
+  .pill { border: 1px solid var(--line); border-radius: 10px; padding: 1px 8px; background: #fffaf0; }
+  .pill.low { color: #8a2c1d; border-color: #8a2c1d55; background: #f7e1da; }
+  .pill.medium { color: #7a5413; border-color: #b7791f55; background: #f8ead0; }
+  .pill.high { color: var(--ok); border-color: #3f6b3c44; background: #e4eedd; }
+  .pill.approved { color: #fff; background: var(--ok); border-color: var(--ok); }
+  .pill.flagged { color: #fff; background: var(--flag); border-color: var(--flag); }
+
+  .note-box, .review-note {
+    font-family: var(--mono); font-size: 14px; border: 1px dashed #b7791f88; background: #fdf3dc;
+    padding: 10px 12px; border-radius: 6px; margin: 0 0 16px;
+  }
+  .review-note b { color: var(--flag); }
+
+  article.recipe { padding-bottom: 22px; margin-bottom: 22px; border-bottom: 1px dashed var(--line); }
+  article.recipe:last-child { border-bottom: none; }
+  .recipe-head { display: flex; align-items: flex-start; gap: 10px; }
+  .recipe-head .tw-title { flex: 1; }
+  .edit-btn {
+    background: #fffaf0; border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px; font-size: 12px; color: var(--ink-soft);
+  }
+  .edit-btn:hover { color: var(--ink); border-color: var(--ink-soft); }
+
+  .tw { font-family: var(--type); color: var(--ink); line-height: 1.55; font-size: 17px; }
+  .tw .tw-title { font-size: 28px; line-height: 1.2; margin: 0 0 6px; font-weight: 400; letter-spacing: .01em; }
+  .tw .tags { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); margin-bottom: 12px; }
+  .tw .tags span { display: inline-block; margin: 2px 4px 2px 0; padding: 0 6px; border: 1px solid var(--line); border-radius: 3px; background: #fffaf0aa; }
+  .tw h2 { font-size: 15px; font-weight: 400; text-transform: uppercase; letter-spacing: .14em; color: var(--ribbon); margin: 18px 0 6px; }
+  .tw h3 { font-size: 16px; font-weight: 400; margin: 12px 0 4px; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+  .tw ul, .tw ol { margin: 0; padding-left: 1.6em; }
+  .tw ul { list-style: none; padding-left: 0; }
+  .tw li { margin: 2px 0; }
+  .tw p { margin: 4px 0; }
+  .tw .notes { font-size: 15px; color: #4a4038; }
+  .tw .notes li::before { content: "※ "; color: var(--ribbon); }
+
+  /* each typed letter gets a little life of its own */
+  .tw .w { white-space: nowrap; }
+  .tw .ch {
+    display: inline-block;
+    transform: translateY(var(--y, 0)) rotate(var(--r, 0deg));
+    opacity: var(--o, 1);
+  }
+  .tw .ch.heavy { text-shadow: .35px 0 0 currentColor; }
+  .tw .ch.faint { filter: blur(.25px); }
+
+  mark.unsure {
+    background: linear-gradient(transparent 15%, var(--hilite) 15%, var(--hilite) 88%, transparent 88%);
+    color: inherit; border-bottom: 2px dotted var(--ribbon); padding: 0 2px; cursor: help;
+  }
+
+  textarea.editor {
+    width: 100%; min-height: 420px; resize: vertical; font-family: var(--mono); font-size: 14px; line-height: 1.5;
+    background: #fffdf7; color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 12px;
+  }
+  textarea.editor:focus, textarea.flag-input:focus { outline: 2px solid #a23b2a55; }
+  .edit-actions, .flag-actions { display: flex; gap: 8px; margin-top: 8px; align-items: center; font-size: 12px; color: var(--ink-soft); }
+
+  /* ---------- action bar ---------- */
+  .actions {
+    display: flex; gap: 8px; align-items: center; padding: 12px 20px; border-top: 1px solid var(--paper-edge);
+    background: #f1e8d3;
+  }
+  .actions .nav { background: #fffaf0; border: 1px solid var(--line); border-radius: 6px; padding: 7px 12px; color: var(--ink); }
+  .actions .spacer { flex: 1; }
+  .btn { border-radius: 6px; padding: 8px 16px; border: 1px solid transparent; font-weight: 700; }
+  .btn.approve { background: var(--ok); color: #fff; }
+  .btn.approve:hover { filter: brightness(1.08); }
+  .btn.flag { background: #fffaf0; color: #7a5413; border-color: #b7791f88; }
+  .btn.flag:hover { background: #fdf3dc; }
+  .btn.save { background: var(--ink); color: #fff; padding: 5px 12px; font-size: 12px; }
+  .btn.plain { background: #fffaf0; color: var(--ink-soft); border-color: var(--line); padding: 5px 12px; font-size: 12px; font-weight: 400; }
+  .counter { font-size: 12px; color: var(--ink-soft); }
+  textarea.flag-input {
+    width: 100%; min-height: 70px; font-family: var(--mono); font-size: 14px; padding: 8px; border-radius: 6px;
+    border: 1px solid #b7791f88; background: #fffdf7; color: var(--ink);
+  }
+  .keys { font-size: 11px; color: var(--ink-soft); padding: 0 20px 10px; background: #f1e8d3; display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .toast {
+    position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%) translateY(20px);
+    background: var(--ink); color: var(--paper); padding: 8px 16px; border-radius: 6px; font-size: 13px;
+    opacity: 0; transition: .2s; pointer-events: none; z-index: 10;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%); }
+
+  @media (max-width: 900px) {
+    html, body { height: auto; }
+    body { display: block; overflow: auto; }
+    main { display: block; }
+    .left { height: 62vh; }
+    .right { display: block; }
+    .page { overflow: visible; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Grammie’s Recipes · Review</h1>
+  <div class="progress">
+    <div class="bar"><i class="ok" id="barOk"></i><i class="fl" id="barFl"></i></div>
+    <span id="progressText"></span>
+  </div>
+  <div class="spacer"></div>
+  <label>Show
+    <select id="filter">
+      <option value="needs-review">Needs review</option>
+      <option value="flagged">Flagged</option>
+      <option value="approved">Approved</option>
+      <option value="all">All cards</option>
+    </select>
+  </label>
+</header>
+<nav class="strip" id="strip"></nav>
+<main>
+  <section class="left">
+    <div class="sides" id="sides"></div>
+    <div class="viewer" id="viewer"><img id="img" alt=""></div>
+    <div class="viewtools">
+      <button id="rotL" title="Rotate left">⟲</button>
+      <button id="rotR" title="Rotate right (R)">⟳</button>
+      <button id="zoomOut" title="Zoom out (−)">−</button>
+      <button id="zoomIn" title="Zoom in (+)">+</button>
+      <button id="fit" title="Fit (0)">Fit</button>
+      <span class="hint">Scroll to zoom · drag to move · double-click to fit</span>
+    </div>
+  </section>
+  <section class="right">
+    <div class="page" id="page"></div>
+    <div>
+      <div class="actions">
+        <button class="nav" id="prev" title="Previous (←)">← Prev</button>
+        <button class="nav" id="next" title="Next (→)">Next →</button>
+        <span class="counter" id="counter"></span>
+        <span class="spacer"></span>
+        <button class="btn flag" id="flagBtn" title="Flag for a fix (F)">Flag</button>
+        <button class="btn approve" id="approveBtn" title="Looks right (A)">Looks right ✓</button>
+      </div>
+      <div class="keys">
+        <span><kbd>A</kbd> approve</span><span><kbd>F</kbd> flag</span><span><kbd>E</kbd> edit text</span>
+        <span><kbd>←</kbd><kbd>→</kbd> prev/next</span><span><kbd>Space</kbd> flip card</span>
+        <span><kbd>R</kbd> rotate</span><span><kbd>0</kbd> fit</span><span><kbd>⌘S</kbd> save edit</span>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const CONF = { low: 0, medium: 1, high: 2 };
+  const state = {
+    cards: [], recipes: {}, order: [], pos: 0,
+    filter: "needs-review", side: 0,
+    view: { s: 1, tx: 0, ty: 0, rot: 0 },
+    editing: null,  // recipe slug being edited
+    flagging: false,
+  };
+
+  // ---------- recipe text parsing ----------
+  function parseRecipe(text) {
+    const meta = {};
+    let body = text;
+    const fm = text.match(/^---\n([\s\S]*?)\n---\n?/);
+    if (fm) {
+      body = text.slice(fm[0].length);
+      for (const line of fm[1].split("\n")) {
+        const m = line.match(/^(\w+):\s*(.*)$/);
+        if (!m) continue;
+        let v = m[2].trim();
+        if (v.startsWith("[") && v.endsWith("]")) {
+          v = v.slice(1, -1).split(",").map((s) => s.trim()).filter(Boolean);
+        } else {
+          v = v.replace(/^"(.*)"$/, "$1");
+        }
+        meta[m[1]] = v;
+      }
+    }
+    return { meta, body };
+  }
+
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  // [something?] marks a word I wasn't sure about
+  const inline = (s) => esc(s).replace(/\[([^\]\n]+?)\?\]/g, '<mark class="unsure" title="Not sure about this one — please check">$1</mark>');
+
+  function renderBody(body) {
+    let html = "", list = null, section = "";
+    const close = () => { if (list) { html += `</${list}>`; list = null; } };
+    for (const raw of body.split("\n")) {
+      const line = raw.trimEnd();
+      let m;
+      if (!line.trim()) { close(); continue; }
+      if ((m = line.match(/^##\s+(.*)/)) && !line.startsWith("###")) {
+        close(); section = m[1].toLowerCase();
+        html += `<h2>${inline(m[1])}</h2>`;
+      } else if ((m = line.match(/^###\s+(.*)/))) {
+        close(); html += `<h3>${inline(m[1])}</h3>`;
+      } else if ((m = line.match(/^[-*]\s+(.*)/))) {
+        if (list !== "ul") { close(); html += `<ul class="${section === "notes" ? "notes" : ""}">`; list = "ul"; }
+        html += `<li>${inline(m[1])}</li>`;
+      } else if ((m = line.match(/^\d+\.\s+(.*)/))) {
+        if (list !== "ol") { close(); html += "<ol>"; list = "ol"; }
+        html += `<li>${inline(m[1])}</li>`;
+      } else {
+        close(); html += `<p>${inline(line)}</p>`;
+      }
+    }
+    close();
+    return html;
+  }
+
+  // ---------- the hand-typed look ----------
+  function rng(seedStr) {
+    let h = 1779033703 ^ seedStr.length;
+    for (let i = 0; i < seedStr.length; i++) { h = Math.imul(h ^ seedStr.charCodeAt(i), 3432918353); h = (h << 13) | (h >>> 19); }
+    return () => {
+      h = Math.imul(h ^ (h >>> 16), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909);
+      return ((h ^= h >>> 16) >>> 0) / 4294967296;
+    };
+  }
+  function typeset(root, seed) {
+    const rand = rng(seed);
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    for (const node of nodes) {
+      const frag = document.createDocumentFragment();
+      for (const part of node.nodeValue.split(/(\s+)/)) {
+        if (!part) continue;
+        if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); continue; }
+        const word = document.createElement("span");
+        word.className = "w";
+        for (const ch of part) {
+          const s = document.createElement("span");
+          s.className = "ch";
+          const r = (rand() - 0.5) * 3.2;          // tilt, degrees
+          const y = (rand() - 0.5) * 1.6;          // bounce, px
+          const o = 0.68 + rand() * 0.32;          // ribbon ink
+          const roll = rand();
+          if (roll < 0.06) s.classList.add("heavy");
+          else if (roll > 0.97) s.classList.add("faint");
+          s.style.cssText = `--r:${r.toFixed(2)}deg;--y:${y.toFixed(2)}px;--o:${o.toFixed(2)}`;
+          s.textContent = ch;
+          word.appendChild(s);
+        }
+        frag.appendChild(word);
+      }
+      node.parentNode.replaceChild(frag, node);
+    }
+  }
+
+  // ---------- data ----------
+  const card = () => state.order[state.pos];
+  function cardConfidence(c) {
+    const ranks = (c.recipes || []).map((slug) => CONF[parseRecipe(state.recipes[slug] || "").meta.confidence] ?? 1);
+    return ranks.length ? Math.min(...ranks) : 1;
+  }
+  const matches = (c) => state.filter === "all" || c.status === state.filter;
+
+  async function load() {
+    const res = await fetch("/api/data");
+    const data = await res.json();
+    state.cards = data.cards;
+    state.recipes = data.recipes;
+    // hardest cards first, so the tricky handwriting gets fresh eyes
+    state.order = state.cards.map((c, i) => ({ c, i, k: cardConfidence(c) }))
+      .sort((a, b) => a.k - b.k || a.i - b.i).map((x) => x.c);
+    const fromHash = decodeURIComponent(location.hash.replace(/^#card=/, ""));
+    let pos = state.order.findIndex((c) => c.id === fromHash);
+    if (pos < 0) pos = state.order.findIndex(matches);
+    if (pos < 0) { state.filter = "all"; $("filter").value = "all"; pos = 0; }
+    state.pos = pos;
+    renderAll();
+  }
+
+  async function putCard(c, patch) {
+    const res = await fetch(`/api/card/${encodeURIComponent(c.id)}`, {
+      method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(patch),
+    });
+    if (!res.ok) throw new Error("save failed");
+    const updated = (await res.json()).card;
+    for (const key of Object.keys(c)) if (!(key in updated)) delete c[key];
+    Object.assign(c, updated);
+  }
+
+  async function saveRecipe(slug, text) {
+    const res = await fetch(`/api/recipe/${encodeURIComponent(slug)}`, { method: "PUT", body: text });
+    if (!res.ok) throw new Error("save failed");
+    state.recipes[slug] = text.endsWith("\n") ? text : text + "\n";
+  }
+
+  // ---------- rendering ----------
+  function renderAll() {
+    state.side = 0; state.editing = null; state.flagging = false;
+    history.replaceState(null, "", `#card=${encodeURIComponent(card().id)}`);
+    renderProgress(); renderStrip(); renderSides(); renderImage(); renderPage();
+  }
+
+  function renderProgress() {
+    const n = state.cards.length;
+    const ok = state.cards.filter((c) => c.status === "approved").length;
+    const fl = state.cards.filter((c) => c.status === "flagged").length;
+    $("barOk").style.width = `${(ok / n) * 100}%`;
+    $("barFl").style.width = `${(fl / n) * 100}%`;
+    $("progressText").textContent = `${ok} of ${n} approved${fl ? ` · ${fl} flagged` : ""}`;
+    const inFilter = state.order.filter(matches).length;
+    $("counter").textContent = `Card ${state.pos + 1} of ${state.order.length}` +
+      (state.filter === "all" ? "" : ` · ${inFilter} left in “${$("filter").selectedOptions[0].text.toLowerCase()}”`);
+  }
+
+  function renderStrip() {
+    const strip = $("strip");
+    strip.innerHTML = "";
+    state.order.forEach((c, i) => {
+      const b = document.createElement("button");
+      b.className = "chip" + (i === state.pos ? " current" : "");
+      const first = c.recipes[0] ? parseRecipe(state.recipes[c.recipes[0]] || "").meta.title : "not a recipe";
+      b.title = `${c.id}: ${first || ""}`;
+      b.innerHTML = `<span class="dot ${c.status}"></span>${esc(c.id)}`;
+      b.onclick = () => go(i);
+      strip.appendChild(b);
+    });
+    strip.querySelector(".current")?.scrollIntoView({ block: "nearest", inline: "center" });
+  }
+
+  function renderSides() {
+    const wrap = $("sides");
+    wrap.innerHTML = "";
+    card().images.forEach((im, i) => {
+      const b = document.createElement("button");
+      b.className = "side" + (i === state.side ? " on" : "");
+      b.innerHTML = esc(im.label || `Side ${i + 1}`) + (im.note ? `<small>· ${esc(im.note)}</small>` : "") +
+        (im.blurred ? `<small class="blurred">· blurred: ${esc(im.blurred)}</small>` : "");
+      b.onclick = () => { state.side = i; renderSides(); renderImage(); };
+      wrap.appendChild(b);
+    });
+  }
+
+  function renderImage() {
+    const im = card().images[state.side];
+    const img = $("img");
+    state.view = { s: 1, tx: 0, ty: 0, rot: im.rotate || 0 };
+    img.style.visibility = "hidden";
+    img.onload = () => { fit(); img.style.visibility = "visible"; };
+    img.src = `/web-images/${encodeURIComponent(im.file)}`;
+    img.alt = `${card().id} ${im.label || ""}`;
+  }
+
+  function applyView() {
+    const { s, tx, ty, rot } = state.view;
+    $("img").style.transform = `translate(-50%, -50%) translate(${tx}px, ${ty}px) rotate(${rot}deg) scale(${s})`;
+  }
+  function fit() {
+    const img = $("img"), v = $("viewer");
+    if (!img.naturalWidth) return;
+    const turned = Math.abs(state.view.rot % 180) === 90;
+    const w = turned ? img.naturalHeight : img.naturalWidth;
+    const h = turned ? img.naturalWidth : img.naturalHeight;
+    state.view.s = Math.min((v.clientWidth - 24) / w, (v.clientHeight - 24) / h);
+    state.view.tx = 0; state.view.ty = 0;
+    applyView();
+  }
+  function zoomAt(factor, cx, cy) {
+    const v = state.view;
+    const ns = Math.min(8, Math.max(0.05, v.s * factor));
+    const f = ns / v.s;
+    v.tx = cx - (cx - v.tx) * f; v.ty = cy - (cy - v.ty) * f; v.s = ns;
+    applyView();
+  }
+  function rotate(deg) { state.view.rot = (state.view.rot + deg + 360) % 360; fit(); }
+
+  function renderPage() {
+    const c = card();
+    const page = $("page");
+    page.innerHTML = "";
+    const conf = ["low", "medium", "high"][cardConfidence(c)];
+    const statusLabel = { "needs-review": "needs review", approved: "approved", flagged: "flagged" }[c.status];
+    const meta = document.createElement("div");
+    meta.className = "meta";
+    meta.innerHTML = `<span>Card ${esc(c.id)}</span>` +
+      `<span class="pill ${c.recipes.length ? conf : ""}">${c.recipes.length ? `my confidence: ${conf}` : "no recipe"}</span>` +
+      `<span class="pill ${c.status}">${statusLabel}</span>` +
+      (c.recipes.length > 1 ? `<span>${c.recipes.length} recipes on this card</span>` : "");
+    page.appendChild(meta);
+
+    if (c.note) {
+      const n = document.createElement("div");
+      n.className = "note-box"; n.textContent = c.note;
+      page.appendChild(n);
+    }
+    if (c.reviewNote && !state.flagging) {
+      const n = document.createElement("div");
+      n.className = "review-note"; n.innerHTML = `<b>Your flag:</b> ${esc(c.reviewNote)}`;
+      page.appendChild(n);
+    }
+    if (state.flagging) page.appendChild(flagForm(c));
+
+    for (const slug of c.recipes) {
+      const text = state.recipes[slug] || "";
+      const art = document.createElement("article");
+      art.className = "recipe";
+      if (state.editing === slug) {
+        art.appendChild(editor(slug, text));
+      } else {
+        const { meta: m, body } = parseRecipe(text);
+        const tw = document.createElement("div");
+        tw.className = "tw";
+        tw.innerHTML =
+          `<div class="recipe-head"><h1 class="tw-title">${inline(m.title || slug)}</h1></div>` +
+          (m.from ? `<div class="from">From the kitchen of ${inline(m.from)}</div>` : "") +
+          (Array.isArray(m.tags) && m.tags.length ? `<div class="tags">${m.tags.map((t) => `<span>${esc(t)}</span>`).join("")}</div>` : "") +
+          renderBody(body);
+        typeset(tw.querySelector(".tw-title"), slug + ":title");
+        tw.querySelectorAll("h2, h3, li, p").forEach((el, i) => typeset(el, `${slug}:${i}`));
+        const btn = document.createElement("button");
+        btn.className = "edit-btn"; btn.textContent = "Edit text";
+        btn.onclick = () => startEdit(slug);
+        tw.querySelector(".recipe-head").appendChild(btn);
+        art.appendChild(tw);
+      }
+      page.appendChild(art);
+    }
+    page.scrollTop = 0;
+  }
+
+  function editor(slug, text) {
+    const wrap = document.createElement("div");
+    const ta = document.createElement("textarea");
+    ta.className = "editor"; ta.value = text; ta.spellcheck = true; ta.dataset.slug = slug;
+    const bar = document.createElement("div");
+    bar.className = "edit-actions";
+    bar.innerHTML = `<button class="btn save">Save</button><button class="btn plain">Cancel</button>` +
+      `<span>Saves to recipes/${esc(slug)}.md · mark a guess like <code>[30?]</code></span>`;
+    bar.querySelector(".save").onclick = () => commitEdit();
+    bar.querySelector(".plain").onclick = () => cancelEdit();
+    wrap.append(ta, bar);
+    setTimeout(() => ta.focus(), 0);
+    return wrap;
+  }
+  function startEdit(slug) { if (state.editing) return; state.editing = slug; renderPage(); }
+  function isDirty() {
+    const ta = document.querySelector("textarea.editor");
+    return !!ta && ta.value.replace(/\n?$/, "\n") !== state.recipes[ta.dataset.slug];
+  }
+  async function commitEdit() {
+    const ta = document.querySelector("textarea.editor");
+    if (!ta) return true;
+    try {
+      if (isDirty()) { await saveRecipe(ta.dataset.slug, ta.value); toast("Saved"); }
+      state.editing = null; renderPage(); renderStrip();
+      return true;
+    } catch { toast("Couldn’t save — is the server still running?"); return false; }
+  }
+  function cancelEdit() {
+    if (isDirty() && !confirm("Throw away your changes to this recipe?")) return;
+    state.editing = null; renderPage();
+  }
+
+  function flagForm(c) {
+    const wrap = document.createElement("div");
+    wrap.className = "note-box";
+    wrap.innerHTML = `<div style="margin-bottom:6px">What needs fixing? <span style="color:var(--ink-soft)">(optional — you can also just fix the text with Edit)</span></div>`;
+    const ta = document.createElement("textarea");
+    ta.className = "flag-input"; ta.value = c.reviewNote || "";
+    const bar = document.createElement("div");
+    bar.className = "flag-actions";
+    bar.innerHTML = `<button class="btn save">Flag card</button><button class="btn plain">Cancel</button><span>⌘↩ to save</span>`;
+    bar.querySelector(".save").onclick = () => submitFlag(ta.value);
+    bar.querySelector(".plain").onclick = () => { state.flagging = false; renderPage(); };
+    ta.addEventListener("keydown", (e) => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) submitFlag(ta.value); });
+    wrap.append(ta, bar);
+    setTimeout(() => ta.focus(), 0);
+    return wrap;
+  }
+
+  // ---------- actions ----------
+  async function go(pos) {
+    if (pos === state.pos) return;
+    if (isDirty() && !(await commitEdit())) return;
+    state.pos = pos; renderAll();
+  }
+  function step(dir) {
+    for (let i = state.pos + dir; i >= 0 && i < state.order.length; i += dir) {
+      if (matches(state.order[i])) return go(i);
+    }
+    toast(dir > 0 ? "That’s the last one in this list" : "That’s the first one in this list");
+  }
+  async function setStatus(status, note) {
+    const c = card();
+    if (isDirty() && !(await commitEdit())) return;
+    const patch = { status };
+    if (note !== undefined) patch.reviewNote = note;
+    if (status === "approved") patch.reviewNote = "";
+    try { await putCard(c, patch); } catch { return toast("Couldn’t save — is the server still running?"); }
+    state.flagging = false;
+    renderProgress(); renderStrip(); renderPage();
+    toast(status === "approved" ? "Approved ✓" : status === "flagged" ? "Flagged" : "Back to needs review");
+    if (status !== "needs-review") setTimeout(() => {
+      const nextPos = state.order.findIndex((x, i) => i > state.pos && matches(x));
+      if (nextPos >= 0) go(nextPos);
+      else if (!state.order.some(matches)) toast("All done in this list 🎉");
+    }, 350);
+  }
+  const submitFlag = (note) => setStatus("flagged", note.trim());
+
+  let toastTimer;
+  function toast(msg) {
+    const t = $("toast");
+    t.textContent = msg; t.classList.add("show");
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("show"), 1600);
+  }
+
+  // ---------- wiring ----------
+  $("filter").onchange = (e) => {
+    state.filter = e.target.value;
+    renderProgress();
+    if (!matches(card())) {
+      const i = state.order.findIndex(matches);
+      if (i >= 0) go(i); else toast("Nothing in this list yet");
+    }
+  };
+  $("prev").onclick = () => step(-1);
+  $("next").onclick = () => step(1);
+  $("approveBtn").onclick = () => setStatus("approved");
+  $("flagBtn").onclick = () => { state.flagging = true; renderPage(); };
+  $("rotL").onclick = () => rotate(-90);
+  $("rotR").onclick = () => rotate(90);
+  $("fit").onclick = fit;
+  $("zoomIn").onclick = () => zoomAt(1.25, 0, 0);
+  $("zoomOut").onclick = () => zoomAt(0.8, 0, 0);
+
+  const viewer = $("viewer");
+  const center = (e) => {
+    const r = viewer.getBoundingClientRect();
+    return [e.clientX - r.left - r.width / 2, e.clientY - r.top - r.height / 2];
+  };
+  viewer.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    const [x, y] = center(e);
+    zoomAt(Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.0018)), x, y);
+  }, { passive: false });
+  let drag = null;
+  viewer.addEventListener("pointerdown", (e) => {
+    drag = { x: e.clientX, y: e.clientY, tx: state.view.tx, ty: state.view.ty };
+    viewer.setPointerCapture(e.pointerId); viewer.classList.add("dragging");
+  });
+  viewer.addEventListener("pointermove", (e) => {
+    if (!drag) return;
+    state.view.tx = drag.tx + e.clientX - drag.x; state.view.ty = drag.ty + e.clientY - drag.y; applyView();
+  });
+  const endDrag = () => { drag = null; viewer.classList.remove("dragging"); };
+  viewer.addEventListener("pointerup", endDrag);
+  viewer.addEventListener("pointercancel", endDrag);
+  viewer.addEventListener("dblclick", fit);
+  window.addEventListener("resize", fit);
+  window.addEventListener("hashchange", () => {
+    const id = decodeURIComponent(location.hash.replace(/^#card=/, ""));
+    const i = state.order.findIndex((c) => c.id === id);
+    if (i >= 0 && i !== state.pos) go(i);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    const typing = e.target.matches("textarea, input, select");
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "s") {
+      e.preventDefault(); if (state.editing) commitEdit(); return;
+    }
+    if (e.key === "Escape") {
+      if (state.editing) cancelEdit();
+      else if (state.flagging) { state.flagging = false; renderPage(); }
+      return;
+    }
+    if (typing || e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key.toLowerCase();
+    if (k === "arrowright" || k === "j") { e.preventDefault(); step(1); }
+    else if (k === "arrowleft" || k === "k") { e.preventDefault(); step(-1); }
+    else if (k === "a") setStatus("approved");
+    else if (k === "f") { state.flagging = true; renderPage(); }
+    else if (k === "u") setStatus("needs-review");
+    else if (k === "e") { const first = card().recipes[0]; if (first) startEdit(first); }
+    else if (k === " ") {
+      e.preventDefault();
+      const n = card().images.length;
+      if (n > 1) { state.side = (state.side + 1) % n; renderSides(); renderImage(); }
+    }
+    else if (k === "r") rotate(e.shiftKey ? -90 : 90);
+    else if (k === "0") fit();
+    else if (k === "=" || k === "+") zoomAt(1.25, 0, 0);
+    else if (k === "-") zoomAt(0.8, 0, 0);
+  });
+  window.addEventListener("beforeunload", (e) => { if (isDirty()) { e.preventDefault(); e.returnValue = ""; } });
+
+  load().catch(() => { $("page").innerHTML = "<p>Couldn’t load the recipes. Is <code>review/server.py</code> running?</p>"; });
+})();
+</script>
+</body>
+</html>
